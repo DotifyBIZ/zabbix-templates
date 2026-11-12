@@ -7,7 +7,7 @@ models Dotify monitors.
 
 ## Depends on, and depended on by
 
-The catalog entry lists no dependencies and no consumers. The templates link to
+The catalog entry depends on `zabbix`, Dotify's Zabbix, and has no consumers. The templates link to
 standard Zabbix templates (ICMP Ping, Generic SNMP, and for QNAP also
 EtherLike-MIB, Interfaces Simple SNMP and Network Generic Device SNMP), which
 ship with Zabbix.

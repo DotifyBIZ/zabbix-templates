@@ -20,3 +20,6 @@ spec:
   lifecycle: production
   # TR-ITOperations
   owner: group:default/1c2b973e-7b63-4f3b-bca4-17c950dfb1b6
+  dependsOn:
+    # The templates are imported into Dotify's Zabbix.
+    - component:default/zabbix
