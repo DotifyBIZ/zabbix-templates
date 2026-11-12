@@ -10,6 +10,7 @@ metadata:
   annotations:
     github.com/project-slug: DotifyBIZ/zabbix-templates
     backstage.io/source-location: url:https://github.com/DotifyBIZ/zabbix-templates
+    backstage.io/techdocs-ref: dir:.
   tags:
     - zabbix
     - snmp
@@ -17,4 +18,5 @@ metadata:
 spec:
   type: library
   lifecycle: production
+  # TR-ITOperations
   owner: group:default/1c2b973e-7b63-4f3b-bca4-17c950dfb1b6
