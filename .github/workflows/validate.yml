@@ -1,0 +1,31 @@
+name: Validate
+
+# Every template parses, so a broken one is caught before it is imported into
+# Zabbix.
+on:
+  pull_request:
+  push:
+    branches: [main, staging]
+
+permissions:
+  contents: read
+
+jobs:
+  parse:
+    name: YAML parse
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Every template is YAML with a zabbix_export root
+        run: |
+          python3 -m pip install --quiet pyyaml
+          python3 - <<'PY'
+          import glob, yaml
+          files = glob.glob('**/*.yaml', recursive=True)
+          assert files, 'no templates found'
+          for f in files:
+              doc = yaml.safe_load(open(f, encoding='utf-8'))
+              if f != 'catalog-info.yaml':
+                  assert isinstance(doc, dict) and 'zabbix_export' in doc, f + ' has no zabbix_export root'
+              print('ok', f)
+          PY

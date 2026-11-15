@@ -1,0 +1,11 @@
+site_name: 'Zabbix templates'
+nav:
+  - Overview: index.md
+  - For users:
+      - Import and use a template: use.md
+  - For the owner:
+      - Ownership: ownership.md
+  - For developers:
+      - Change a template: development.md
+plugins:
+  - techdocs-core
